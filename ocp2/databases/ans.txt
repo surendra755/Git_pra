@@ -1,0 +1,2 @@
+create table ans(ans number(10))
+/

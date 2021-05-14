@@ -1,0 +1,2 @@
+create table creditcard(cardnum varchar2(20),cardpin varchar2(20),expdate date Not Null,accnum varchar2(20) Primary Key)
+/

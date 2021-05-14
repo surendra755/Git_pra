@@ -1,0 +1,221 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function check()
+		{	
+			var courseid=document.getElementById("courseid");
+			var couname=document.getElementById("couname");
+			var syear=document.getElementById("syear");
+			var eyear=document.getElementById("eyear");
+			var duration=document.getElementById("duration");
+			var fee=document.getElementById("fee");
+			if(courseid.value=="")
+			{
+				alert("Enter courseId");
+				courseid.focus();
+				return false;
+			}
+			if(couname.value=="")
+			{
+				alert("Enter course name");
+				couname.focus();
+				return false;
+			}
+			if(syear.value=="")
+			{
+				alert("Enter year of starting date");
+				syear.focus();
+				return false;
+			}
+			if(eyear.value=="")
+			{
+				alert("Enter year of ending date");
+				eyear.focus();
+				return false;
+			}
+			if(duration.value=="")
+			{
+				alert("Enter the duration");
+				duration.focus();
+				return false;
+			}
+			if(fee.value=="")
+			{
+				alert("Enter the fee");
+				fee.focus();
+				return false;
+			}
+			return true;
+		}
+		function checknumeric()
+		{
+			if(window.event.keyCode<47)
+			{
+				window.event.keyCode=0;
+				alert("characters not allowed");
+			}
+			if(window.event.keyCode>58)
+			{
+				window.event.keyCode=0;
+				alert("characters not allowed");
+			}
+		}
+	</script>
+</head>
+<body bgcolor=eeffee>
+<table border="0" height=22%  width=100% align="center" bgcolor=eeffee>
+<tr>
+<td colspan="3" background="C:\Program Files\Apache Software Foundation\Tomcat 5.5\webapps\anusha\adminhome.jpeg" align="right" valign="bottom"><a href="./alogout.jsp"><h3>logout</h3></a></td>
+</tr>
+</table>
+<table width=100%>
+<tr>
+<td width=25% bgcolor=9999cc>
+<table align="center"><br>
+<tr align="center"><a href="./announcement.html"><h3>Announcements</h3></a></tr><br>
+<tr align="center"><a href="./inscourse.html"><h3>Add course</h3></a></tr><br>
+<tr align="center"><a href="./aexam.html"><h3>Activate exam</h3></a></tr><br>
+<tr align="center"><a href="./selfac.jsp"><h3>Add faculty</h3></a></tr><br>
+<tr align="center"><a href="./viewlea.jsp"><h3>Grant Leave</h3></a></tr><br>
+<tr align="center"><a href="./viewshe.jsp"><h3>viewfeedback</h3></a></tr><br>
+<tr align="center"><a href="./upback.jsp"><h3>Material&Exam</h3></a></tr><br>
+<tr align="center"><a href="./adminhome.html"><h3>Home</h3></a></tr>
+</table>
+	</td>
+	<td width="75%" align="center">
+		<h2>New Course Details</h2>
+		<form name="facreg" onsubmit="return check()" action="./inscourse" method="post">
+							<table width="500" height="30" border="0" >
+								<tr>
+                    							<td><center>courseid</center></td>
+								<td><input id="courseid" name="courseid" type="text" size="50" maxlength="100" value=""></td>
+                  							</tr>
+								<tr>
+                    							<td><center>coursename</center></td>
+								<td><input id="couname" name="couname" type="text" size="50" maxlength="100" value=""></td>
+                  							</tr>
+								<tr>
+                    				<td>StartingDate</td>
+									<td><select name="sday" size="">
+				    					<option value=01>1</option>
+				       					<option value=02>2</option>
+				      					<option value=03>3</option>
+				      					<option value=04>4</option>
+				   						<option value=05>5</option>
+				    					<option value=06>6</option>
+				    	       			<option value=07>7</option>
+				    	  				<option value=08>8</option>
+				     			        <option value=09>9</option>
+				    				   	<option value=10>10</option>
+				    					<option value=11>11</option>
+				    					<option value=12>12</option>
+				    					<option value=13>13</option>
+				    					<option value=14>14</option>
+				 						<option value=15>15</option>
+				  						<option value=16>16</option>
+				    					<option value=17>17</option>
+				    					<option value=18>18</option>
+				    					<option value=19>19</option>
+				    					<option value=20>20</option>
+				    					<option value=21>21</option>
+				    					<option value=22>22</option>
+				    					<option value=23>23</option>
+				    					<option value=24>24</option>
+				    					<option value=25>25</option>
+				    					<option value=26>26</option>
+				    					<option value=27>27</option>
+				    					<option value=28>28</option>
+				    					<option value=29>29</option>
+				    					<option value=30>30</option>
+				    					<option value=31>31</option>
+			      						</select>&nbsp;&nbsp;&nbsp;&nbsp;
+				  						<select name="smonth" size="">
+				    					<option value="Jan">Jan</option>
+				    					<option value="Feb">Feb</option>
+				    					<option value="Mar">Mar</option>
+				    					<option value="Apr">Apr</option>
+				    					<option value="May">May</option>
+				    					<option value="Jun">Jun</option>
+				    					<option value="Jul">Jul</option>
+				    					<option value="Aug">Aug</option>
+				    					<option value="Sep">Sep</option>
+				    					<option value="Oct">Oct</option>
+				    					<option value="Nov">Nov</option>
+				    					<option value="Dec">Dec</option>
+			      						</select>&nbsp;&nbsp;&nbsp;&nbsp;
+				  						<input id="syear" name="syear" type="text" size="8" maxlength="4" value="" onkeypress=checknumeric()>(yyyy)&nbsp;&nbsp;&nbsp;&nbsp;
+									</td>
+                  						</tr>
+								<tr>
+                    				<td>EndingDate</td>
+									<td><select name="eday" size="">
+				    					<option value=01>1</option>
+				       					<option value=02>2</option>
+				      					<option value=03>3</option>
+				      					<option value=04>4</option>
+				   						<option value=05>5</option>
+				    					<option value=06>6</option>
+				    	       			<option value=07>7</option>
+				    	  				<option value=08>8</option>
+				     			        <option value=09>9</option>
+				    				   	<option value=10>10</option>
+				    					<option value=11>11</option>
+				    					<option value=12>12</option>
+				    					<option value=13>13</option>
+				    					<option value=14>14</option>
+				 						<option value=15>15</option>
+				  						<option value=16>16</option>
+				    					<option value=17>17</option>
+				    					<option value=18>18</option>
+				    					<option value=19>19</option>
+				    					<option value=20>20</option>
+				    					<option value=21>21</option>
+				    					<option value=22>22</option>
+				    					<option value=23>23</option>
+				    					<option value=24>24</option>
+				    					<option value=25>25</option>
+				    					<option value=26>26</option>
+				    					<option value=27>27</option>
+				    					<option value=28>28</option>
+				    					<option value=29>29</option>
+				    					<option value=30>30</option>
+				    					<option value=31>31</option>
+			      						</select>&nbsp;&nbsp;&nbsp;&nbsp;
+				  						<select name="emonth" size="">
+				    					<option value="Jan">Jan</option>
+				    					<option value="Feb">Feb</option>
+				    					<option value="Mar">Mar</option>
+				    					<option value="Apr">Apr</option>
+				    					<option value="May">May</option>
+				    					<option value="Jun">Jun</option>
+				    					<option value="Jul">Jul</option>
+				    					<option value="Aug">Aug</option>
+				    					<option value="Sep">Sep</option>
+				    					<option value="Oct">Oct</option>
+				    					<option value="Nov">Nov</option>
+				    					<option value="Dec">Dec</option>
+			      						</select>&nbsp;&nbsp;&nbsp;&nbsp;
+				  						<input id="eyear" name="eyear" type="text" size="8" maxlength="4" value="" onkeypress=checknumeric()>(yyyy)&nbsp;&nbsp;&nbsp;&nbsp;
+									</td>
+                  				</tr>
+								<tr>
+                    							<td><center>duration</center></td>
+									<td><input id="duration" name="duration" type="text" size="50" maxlength="100" value=""></td>
+                  						</tr>
+								<tr>
+                    							<td><center>Fee</center></td>
+									<td><input id="fee" name="fee" type="text" size="50" maxlength="100" value="" onkeypress="checknumeric()"></td>
+                  						</tr>
+								<tr>
+				          				<td colspan=2><center><input name="submit" type="submit" value="SUBMIT">
+									<input name="reset" type="reset" value="RESET">
+									</td>
+								</tr>
+							</table>
+		  	</form>
+      		</td>
+</tr>
+</table>
+</body>
+	</body>
+</html>

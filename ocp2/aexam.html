@@ -1,0 +1,111 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function check()
+		{	
+			var date=document.getElementById("date");
+			var time=document.getElementById("time");
+			var paper=document.getElementById("paper");
+			var dura=document.getElementById("dura");
+			var key=document.getElementById("key");
+			var noq=document.getElementById("noq");
+			if(date.value=="")
+			{
+				alert("Enter date");
+				date.focus();
+				return false;
+			}
+			if(time.value=="")
+			{
+				alert("Enter time");
+				time.focus();
+				return false;
+			}
+			if(paper.value=="")
+			{
+				alert("Enter paper");
+				paper.focus();
+				return false;
+			}
+			if(dura.value=="")
+			{
+				alert("Enter duration");
+				dura.focus();
+				return false;
+			}
+			if(key.value=="")
+			{
+				alert("Enter the key of exam");
+				key.focus();
+				return false;
+			}
+			if(noq.value=="")
+			{
+				alert("Enter the no of questions");
+				noq.focus();
+				return false;
+			}
+			return true;
+		}
+	</script>
+
+</head>
+<body bgcolor=eeffee>
+<table border="0" height=22%  width=100% align="center" bgcolor=eeffee>
+<tr>
+<td colspan="3" background="C:\Program Files\Apache Software Foundation\Tomcat 5.5\webapps\anusha\adminhome.jpeg" align="right" valign="bottom"><a href="./alogout.jsp"><h3>logout</h3></a></td>
+</tr>
+</table>
+<table width=100%>
+<tr>
+<td width=25% bgcolor=9999cc>
+<table align="center"><br>
+<tr align="center"><a href="./announcement.html"><h3>Announcements</h3></a></tr><br>
+<tr align="center"><a href="./inscourse.html"><h3>Add course</h3></a></tr><br>
+<tr align="center"><a href="./aexam.html"><h3>Activate exam</h3></a></tr><br>
+<tr align="center"><a href="./selfac.jsp"><h3>Add faculty</h3></a></tr><br>
+<tr align="center"><a href="./viewlea.jsp"><h3>Grant Leave</h3></a></tr><br>
+<tr align="center"><a href="./viewshe.jsp"><h3>viewfeedback</h3></a></tr><br>
+<tr align="center"><a href="./upback.jsp"><h3>Material&Exam</h3></a></tr><br>
+<tr align="center"><a href="./adminhome.html"><h3>Home</h3></a></tr>
+</table>
+	</td>
+	<td width="70%" align="center">
+		<form method="GET" name='examfm' onsubmit="return check()"action="./aexam">
+			<table width="100%">
+				<tr>
+					<td bgcolor="cc99cc"><h3 align="center">EXAM ACTIVATION</h3></td>
+				</tr>
+			</table>
+			<table border="0" width="100%" >
+				<center>		
+				<tr>
+					<td><h3>Enter Date:</h3></td>
+					<td><input type=text Id="date" name="date" size=50>(dd-mm-yyyy)</td>
+				</tr>
+				<tr>
+					<td><h3>Enter Time:</h3></td>
+					<td><input type=text Id=time name="time" size=50>(hh-mm-ss)</td>
+				</tr>	
+				<tr> 
+					<td><h3>Enter File Name</h3></td>
+					<td><input type=file id=paper name="paper" size=50></td>	
+				</tr>
+				<tr>		
+					<td><h3>Duration In Mins</h3></td>
+					<td><input type="text" Id=dura name="duration" size="50" value=""></td> 				
+				</tr>
+				<tr>
+					<td><h3>Key String</h3></td>
+					<td><input type="text" name="key" size="50" value="" ></td> 						
+				</tr>
+				<tr>			
+					<td colspan=2><center><input type="submit" value= "Activate Exam"></center></td>	
+				</tr>     
+				</center>
+			</table>
+		</form>
+	</td>
+</tr>
+</table>
+</body></html>

@@ -1,0 +1,127 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function check_submit()
+		{	
+			var uname=document.getElementById("uname");
+			var course=document.getElementById("course");
+			var suggestions=document.getElementById("suggestions");
+			
+			if(uname.value=="")
+			{
+				alert("Enter uname");
+				userid.focus();
+				return false;
+			}
+			
+			if(course.value=="")
+			{
+				alert("Enter course name");
+				course.focus();
+				return false;
+			}
+			if(suggestions.value=="")
+			{
+				alert("Enter the suggestions");
+				suggestions.focus();
+				return false;
+			}
+return true;
+}
+function checknumeric()
+		{
+			if(window.event.keyCode<47)
+			{
+				window.event.keyCode=0;
+				alert("characters not allowed");
+			}
+			if(window.event.keyCode>58)
+			{
+				window.event.keyCode=0;
+				alert("characters not allowed");
+			}
+		}
+</script>
+</head>
+<body bgcolor="#eeffee">
+<table border="0"  height=25%  width=100% bgcolor="#eeffee" align="center">
+<tr>
+<td background="C:\Program Files\Apache Software Foundation\Tomcat 5.5\webapps\anusha\studhome.jpg" colspan="2"  align="right" valign="bottom"><a href="./slogout.jsp"><h3>logout</h3></a></td>
+</tr>
+</table>
+<table width=100%>
+<tr>
+<td width=25% bgcolor=9999cc>
+<table align="center"><br><br>
+<tr align="center"><h3><a href="./download">CourseMaterial</h3></a></tr><br>
+<tr align="center"><a href="./exampaper.html"><h3>Exam Paper</h3></a></tr><br>
+<tr align="center"><a href="./viewnewmsg "><h3>DiscussionBoard</h3></a></tr><br>
+<tr align="center"><a href="./feedback.html"><h3>FeedBack</h3></a></tr><br>
+<tr align="center"><a href="./Vsan"><h3>Announcements</h3></a></tr><br>
+<tr align="center"><a href="./stuhome.html"><h3>Home</h3></a></tr>
+</table>
+</td>
+<td>
+<center><h2>Feed back</h2></center>
+<form name='f1' action="./Sendf " method="post" onsubmit="return check()">
+<table align="center">
+<tr><td>Username</td><td><input type="text" name="uname" id=uname size="60"></td></tr>
+<tr><td>Course</td><td><input type="text" name="course" id=course size="60"></td></tr>
+<tr><td>Suggestions</td><td><textarea rows="10" cols="50" name="suggestions" id=suggestions></textarea></td></tr>
+<tr>
+                    							<td><center>Date</center></td>
+									<td><select name="day" size="">
+				    					<option value=1>1</option>
+				       					<option value=2>2</option>
+				      					<option value=3>3</option>
+				      					<option value=4>4</option>
+				   					<option value=5>5</option>
+				    					<option value=6>6</option>
+				    	       				<option value=7>7</option>
+				    	  				<option value=8>8</option>
+				     			        	<option value=9>9</option>
+				    				   	<option value=10>10</option>
+				    					<option value=11>11</option>
+				    					<option value=12>12</option>
+				    					<option value=13>13</option>
+				    					<option value=14>14</option>
+				 					<option value=15>15</option>
+				  					<option value=16>16</option>
+				    					<option value=17>17</option>
+				    					<option value=18>18</option>
+				    					<option value=19>19</option>
+				    					<option value=20>20</option>
+				    					<option value=21>21</option>
+				    					<option value=22>22</option>
+				    					<option value=23>23</option>
+				    					<option value=24>24</option>
+				    					<option value=25>25</option>
+				    					<option value=26>26</option>
+				    					<option value=27>27</option>
+				    					<option value=28>28</option>
+				    					<option value=29>29</option>
+				    					<option value=30>30</option>
+				    					<option value=31>31</option>
+			      						</select>&nbsp;&nbsp;&nbsp;&nbsp;
+				  					<select name="month" size="">
+				    					<option value="Jan">Jan</option>
+				    					<option value="Feb">Feb</option>
+				    					<option value="Mar">Mar</option>
+				    					<option value="Apr">Apr</option>
+				    					<option value="May">May</option>
+				    					<option value="Jun">Jun</option>
+				    					<option value="Jul">Jul</option>
+				    					<option value="Aug">Aug</option>
+				    					<option value="Sep">Sep</option>
+				    					<option value="Oct">Oct</option>
+				    					<option value="Nov">Nov</option>
+				    					<option value="Dec">Dec</option>
+			      						</select>&nbsp;&nbsp;&nbsp;&nbsp;
+				  					<input id="year" name="year" type="text" size="8" maxlength="4" value="" onkeypress=checknumeric()>(yyyy)
+									</td>
+                  						</tr>
+<tr><td><input type="submit" value="send"></td><td><input type="reset" value="clear"></td></tr>
+</table>
+</form>
+</td></tr></table>
+</body></html>

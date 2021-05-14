@@ -1,0 +1,2 @@
+create table responsemsg(author varchar(20) Not Null,mail varchar(25) Not Null,subject varchar(30) Not Null,courseid varchar(6) references course(courseid) ON DELETE CASCADE,msg varchar(200) Not Null,day varchar(25) Not Null,ansid varchar(5) Not Null,quesid varchar(6) references submitmsg(quesid),Primary Key(ansid,quesid))
+/

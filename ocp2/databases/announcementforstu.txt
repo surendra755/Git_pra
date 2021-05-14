@@ -1,0 +1,2 @@
+create table astu(announcements varchar2(100) Not Null)
+/

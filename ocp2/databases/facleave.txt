@@ -1,0 +1,2 @@
+create table leave(name varchar2(20) Not Null,mail varchar2(30) Not Null,reason varchar2(50) Not Null)
+/

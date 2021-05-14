@@ -1,0 +1,2 @@
+create table upload(fuserid varchar2(20) references faculty(fuserid) ON DELETE CASCADE,courseid varchar2(5) references course(courseid) ON DELETE CASCADE,topic varchar2(40) Not Null,filename varchar2(100) Not Null,status varchar2(20) Not Null,upid number(5) Not Null)
+/

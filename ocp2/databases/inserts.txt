@@ -1,0 +1,5 @@
+1.insert into creditcard values('&cardnum','&pin','&expdate','&accnum')
+/
+
+
+---------------------------------------------------------------------------

@@ -1,0 +1,8 @@
+create table faculty(fuserid varchar2(20) Primary Key,password varchar2(20) Not Null,secque varchar2(30) Not Null,secans varchar2(20) Not Null,
+ffname varchar2(20) Not Null,flname varchar2(20) Not Null,dob date Not Null,
+gender varchar2(10) Not Null,graduate varchar2(4) Not Null,postgrad varchar2(4) Not Null,
+street varchar2(20) Not Null,city varchar2(20) Not Null,state varchar2(20) Not Null,
+country varchar2(20) Not Null,zipcode number(10) Not Null,
+email_id varchar2(30) Not Null,phoneno number(15) Not Null,
+courseid varchar2(5) references course(courseid),status varchar2(15) Not Null)
+/

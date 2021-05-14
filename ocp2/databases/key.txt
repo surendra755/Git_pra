@@ -1,0 +1,2 @@
+create table key(qno number(10),ques varchar2(300),ch1 varchar2(30),ch2 varchar2(30),ch3 varchar2(30),ch4 varchar2(30),time date)
+/

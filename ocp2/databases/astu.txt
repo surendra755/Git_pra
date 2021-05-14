@@ -1,0 +1,2 @@
+create table astu(sannouncement varchar2(100) Not Null,auserid varchar2(20) references admin(auserid))
+/

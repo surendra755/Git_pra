@@ -1,0 +1,101 @@
+1.create table course(courseid varchar2(10) Primary key,coursename varchar2(20) Not Null,sdate date Not Null,edate date Not Null,duration varchar2(20) Not Null,fee number(10) Not Null)
+  /
+--------------------------------------------
+2.create table student(suserid varchar2(20) Primary Key,password varchar2(20) Not Null,
+secque varchar2(30) Not Null,secans varchar2(30) Not Null,
+sfname varchar2(20) Not Null,slname varchar2(20) Not Null,dob date Not Null,
+gender varchar2(10) Not Null,graduate varchar2(4) Not Null,
+street varchar2(20) Not Null,city varchar2(20) Not Null,state varchar2(20) Not Null,
+country varchar2(20) Not Null,zipcode number(10) Not Null,
+email_id varchar2(30) Not Null,phoneno number(15) Not Null,
+courseid varchar2(5) references course(courseid),result varchar2(10))
+/
+----------------------------------------------
+3.create table faculty(fuserid varchar2(20) Primary Key,password varchar2(20) Not Null,secque varchar2(30) Not Null,secans varchar2(20) Not Null,
+ffname varchar2(20) Not Null,flname varchar2(20) Not Null,dob date Not Null,
+gender varchar2(10) Not Null,graduate varchar2(4) Not Null,postgrad varchar2(4) Not Null,
+street varchar2(20) Not Null,city varchar2(20) Not Null,state varchar2(20) Not Null,
+country varchar2(20) Not Null,zipcode number(10) Not Null,
+email_id varchar2(30) Not Null,phoneno number(15) Not Null,
+courseid varchar2(5) references course(courseid),status varchar2(15) Not Null)
+/
+-------------------------------------------------
+4.create table ccard(cardnum varchar2(20) Not Null,cardpin varchar2(20) Not Null,
+expdate date Not Null,suserid varchar2(20) references student(suserid) ON DELETE CASCADE)
+/
+-------------------------------------------------
+5.create table creditcard(cardnum varchar2(20),cardpin varchar2(20),expdate date Not Null,accnum varchar2(20) Primary Key)
+/
+
+
+-------------------------------------------------
+6.create table admin(auserid varchar2(20) Primary Key,pwd varchar2(20) Not Null,designation varchar2(20) Not Null)
+/
+
+
+-------------------------------------------------
+7.create table astu(sannouncement varchar2(100) Not Null,auserid varchar2(20) references admin(auserid))
+/
+
+
+-------------------------------------------------
+8.create table afac(fannouncement varchar2(100) Not Null,auserid varchar2(20) references admin(auserid))
+/
+
+
+-------------------------------------------------
+9.create table upload(fuserid varchar2(20) references faculty(fuserid) ON DELETE CASCADE,courseid varchar2(5) references course(courseid) ON DELETE CASCADE,topic varchar2(40) Not Null,filename varchar2(100) Not Null,status varchar2(20) Not Null,upid number(5) Not Null)
+/
+
+
+-------------------------------------------------                                                                                                                                                
+10.create table leave(fuserid varchar2(20) references faculty(fuserid) ON DELETE CASCADE,name varchar2(20) Not Null,mail varchar2(30) Not Null,reason varchar2(100) Not Null,appdate date Not Null,status varchar2(20) Not Null,lid number(5) Not Null)
+/
+
+
+
+-----------------------------------------------------------
+11.create table feedback(suserid varchar2(20) references student(suserid) ON DELETE CASCADE,name varchar2(20) Not Null, course varchar2(20) references course(courseid) ON DELETE CASCADE,suggestions varchar2(100) Not Null,sentdate date Not Null,status varchar2(10) Not Null,feedid number(5) Not Null)
+/
+
+
+-------------------------------------------------------------
+12.create table submitmsg(author varchar(20) Not Null,mail varchar(25) Not Null,subject varchar(30) Not Null,courseid varchar(6) references course(courseid) ON DELETE CASCADE,msg varchar(200) Not Null,day varchar(25) Not Null,quesid varchar(6) Primary Key)
+/
+
+
+--------------------------------------------------------------
+13.create table responsemsg(author varchar(20) Not Null,mail varchar(25) Not Null,subject varchar(30) Not Null,courseid varchar(6) references course(courseid) ON DELETE CASCADE,msg varchar(200) Not Null,day varchar(25) Not Null,ansid varchar(5) Not Null,quesid varchar(6) references submitmsg(quesid),Primary Key(ansid,quesid))
+/
+
+
+----------------------------------------------------------------
+14.create table key(qno number(10),ques varchar2(20),ch1 varchar2(10),ch2 varchar2(10),ch3 varchar2(10),ch4 varchar2(10),time date)
+/
+
+
+
+------------------------------------------------------------------
+15.create table ans(ans number(10))
+/
+
+
+------------------------------------------------------------------
+16.create sequence lea increment by 1 start with 1
+/
+
+
+--------------------------------------------------------------------
+17.create sequence feed increment by 1 start with 1
+/
+
+
+--------------------------------------------------------------------
+18.create sequence disc increment by 1 start with 1
+/
+
+-----------------------------------------------------------------
+19.insert into admin values('&auserid','&pwd','&designation');
+
+
+-----------------------------------------------------------------

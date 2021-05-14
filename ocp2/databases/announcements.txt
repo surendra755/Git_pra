@@ -1,0 +1,2 @@
+create table announcement(recipient varchar2(10) Not Null,announcement varchar2(100) Not Null)
+/

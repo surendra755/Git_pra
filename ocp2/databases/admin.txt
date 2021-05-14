@@ -1,0 +1,2 @@
+create table admin(auserid varchar2(20) Primary Key,pwd varchar2(20) Not Null,designation varchar2(20) Not Null)
+/

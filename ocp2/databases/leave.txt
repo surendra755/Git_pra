@@ -1,0 +1,2 @@
+create table leave(fuserid varchar2(20) references faculty(fuserid) ON DELETE CASCADE,name varchar2(20) Not Null,mail varchar2(30) Not Null,reason varchar2(100) Not Null,appdate date Not Null,status varchar2(20) Not Null,lid number(5) Not Null)
+/

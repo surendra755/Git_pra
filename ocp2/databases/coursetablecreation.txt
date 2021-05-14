@@ -1,0 +1,2 @@
+create table course(courseid varchar2(10) Primary key,coursename varchar2(20) Not Null,sdate date Not Null,edate date Not Null,duration varchar2(20) Not Null,fee number(10) Not Null)
+/

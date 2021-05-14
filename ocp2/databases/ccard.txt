@@ -1,0 +1,3 @@
+create table ccard(cardnum varchar2(20) Not Null,cardpin varchar2(20) Not Null,
+expdate date Not Null,suserid varchar2(20) references student(suserid) ON DELETE CASCADE)
+/

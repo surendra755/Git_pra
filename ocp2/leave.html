@@ -1,0 +1,155 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function check_submit()
+		{	
+			var name=document.getElementById("name");
+			var mail=document.getElementById("mail");
+			var reason=document.getElementById("reason");
+			var year=document.getElementById("year");
+			if(name.value=="")
+			{
+				alert("Enter Name");
+				name.focus();
+				return false;
+			}
+			if(mail.value=="")
+			{
+				alert("Enter the email");
+				mail.focus();
+				return false;
+			}
+			if(mail.value!="")
+			{	var posi=mail.value;
+				apos=posi.indexOf("@")
+				dotpos=posi.lastIndexOf(".")
+				if (apos<1||dotpos-apos<2) 
+				{
+					alert("not A Valid EMAIL Address");
+					mail.focus();
+					return false;
+				}
+			}
+			if(reason.value=="")
+			{
+				alert("Enter the reason");
+				reason.focus();
+				return false;
+			}
+			if(year.value=="")
+			{
+				alert("Enter the year");
+				year.focus();
+				return false;
+			}
+			return true;
+		}
+		function checknumeric()
+		{
+			if(window.event.keyCode<47)
+			{
+				window.event.keyCode=0;
+				alert("characters not allowed");
+			}
+			if(window.event.keyCode>58)
+			{
+				window.event.keyCode=0;
+				alert("characters not allowed");
+			}
+		}
+	</script>
+</head>
+<body bgcolor="#eeffee">
+<table border="0" height=25%  width=100% bgcolor="#eeffee" align="center">
+<tr height=25% >
+<td background="C:\Program Files\Apache Software Foundation\Tomcat 5.5\webapps\anusha\fachome.jpg" colspan="2"  align="right" valign="bottom"><a href="./flogout.jsp"><h3>logout</h3></a></td>
+</tr>
+</table>
+<table width=100%>
+<tr>
+<td width=25% bgcolor=9999cc>
+<table align="center"><br>
+<tr align="center"><h3><a href="./upload.html">SendCourseMaterial</h3></a></tr><br>
+<tr align="center"><a href="./upload.html"><h3>SendExamPaper</h3></a></tr><br>
+<tr align="center"><a href="./viewnewmsg"><h3>DiscussionBoard</h3></a></tr><br>
+<tr align="center"><a href="./Vfan"><h3>Annoucement</h3></a></tr><br>
+<tr align="center"><a href="./leave.html"><h3>Apply For Leave</h3></a></tr><br>
+<tr align="center"><a href="./permi.jsp"><h3>ViewPermissions</h3></a></tr><br>
+<tr align="center"><a href="./fachome.html"><h3>Home</h3></a></tr>
+</table>
+</td>
+<td><center>
+<form action="./Sendl" method="post" name="reqleave" onsubmit="return check_submit()">
+<h3>This form sends a request to Admin to approve for Leave</h3>
+<table>
+ <tr><td>Name:</td>
+<td><input type="text" name="name" id="name" value=" " size="30"></td></tr>
+<tr><td>
+Mail:</td>
+<td><input type="text" name="mail" id="mail"
+value=" " size="30"></td></tr>
+<tr><td>
+Reason:</td>
+<td><textarea type="text" name="reason" id="reason"
+value=" " rows="5" cols="30"></textarea>
+</td></tr>
+<tr>
+                    					<td><center>Date</center></td>
+									<td><select name="day" size="">
+				    					<option value=1>1</option>
+				       					<option value=2>2</option>
+				      					<option value=3>3</option>
+				      					<option value=4>4</option>
+				   					<option value=5>5</option>
+				    					<option value=6>6</option>
+				    	       				<option value=7>7</option>
+				    	  				<option value=8>8</option>
+				     			        	<option value=9>9</option>
+				    				   	<option value=10>10</option>
+				    					<option value=11>11</option>
+				    					<option value=12>12</option>
+				    					<option value=13>13</option>
+				    					<option value=14>14</option>
+				 					<option value=15>15</option>
+				  					<option value=16>16</option>
+				    					<option value=17>17</option>
+				    					<option value=18>18</option>
+				    					<option value=19>19</option>
+				    					<option value=20>20</option>
+				    					<option value=21>21</option>
+				    					<option value=22>22</option>
+				    					<option value=23>23</option>
+				    					<option value=24>24</option>
+				    					<option value=25>25</option>
+				    					<option value=26>26</option>
+				    					<option value=27>27</option>
+				    					<option value=28>28</option>
+				    					<option value=29>29</option>
+				    					<option value=30>30</option>
+				    					<option value=31>31</option>
+			      						</select>&nbsp;&nbsp;&nbsp;&nbsp;
+				  					<select name="month" size="">
+				    					<option value="Jan">Jan</option>
+				    					<option value="Feb">Feb</option>
+				    					<option value="Mar">Mar</option>
+				    					<option value="Apr">Apr</option>
+				    					<option value="May">May</option>
+				    					<option value="Jun">Jun</option>
+				    					<option value="Jul">Jul</option>
+				    					<option value="Aug">Aug</option>
+				    					<option value="Sep">Sep</option>
+				    					<option value="Oct">Oct</option>
+				    					<option value="Nov">Nov</option>
+				    					<option value="Dec">Dec</option>
+			      						</select>&nbsp;&nbsp;&nbsp;&nbsp;
+				  					<input id="year" name="year" type="text" size="8" maxlength="4" value="" onkeypress=checknumeric()>(yyyy)
+									</td>
+                  						</tr>
+<tr><td><input type="submit" value="Send"></td>
+<td><input type="reset" value="Reset"></td></tr>
+</table>
+</form></center>
+</td></tr></table>
+</body>
+</html>
+

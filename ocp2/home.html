@@ -1,0 +1,92 @@
+<html>
+<head>
+<script>
+function check_submit()
+{
+var un=document.getElementById("uname");
+var pd=document.getElementById("pwd");
+if(!un.value)
+{
+alert("Enter UserId");
+un.focus();
+return false;
+}
+if(!pd.value)
+{
+alert("Enter password");
+pd.focus();
+return false;
+}
+return true;
+}
+</script></head>
+<body>
+<table border="0" height=100%  width=100% bgcolor="#eeffee" align="center">
+<tr height=20% >
+<td colspan="3" ><img src="hom1.jpg" width=100% height=100%></td>
+</tr>
+<tr >
+<td width=20% bgcolor="eeffee" valign="top"><a href="./contactus.html"><img src="butt.jpg" align="top"></a>
+</td>
+<td width=55%><h3>AT A GLANCE</h4>Our portal is a community of Professors,administration officials and students to perform the functions of teaching,research and service.<br> 
+  The key tasks of our Portal are <br> 
+- Knowledge creation<br>  
+- Knowledge transfer<br>  
+- Knowledge assessment<br>
+- Providing a place for networking <br>
+- Develop a community of scholars<br> 
+<pre>     <a href="./course.jsp"><img src="c1.jpg"></a>    <a href="./faqs.html"><img src="faqs.jpg"></a>    <a href="./aboutus.html"><img src="aboutu.jpg"></a></pre>
+</td>
+
+<td width=25% bgcolor="white">
+<form name="login" method="post" action="./login" onsubmit="return check_submit()">
+<table align="center" cellpadding=0 cellspacing=0 border="0" width='40%'>
+<pre>              <a href="./adminlog.html"><img src="admin.jpg"></a></pre>
+<center><img src="login4.jpg" width=100%></center>
+<tr>
+<td >User</td>
+<td ><input type="text" id="uname" name="uname"size="20" maxlength="25" value=""></td>
+</tr>
+<tr>
+<td >Password</td>
+<td ><input type="password" id="pwd" name="pwd" size="20" maxlength="25" value=""></td>
+</tr>
+<tr>
+<td>usertype</td>
+<td>
+<select name="utype">
+<option value="student">student</option>
+<option value="faculty">faculty</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+<input type="SUBMIT" value="SIGN IN" name="submit">
+</td>
+</tr>
+<tr>
+<td >
+</td>
+<td><pre>             </pre>
+</td>
+</tr>
+<tr>
+<td >
+<a href="./course.jsp"><img src="c3.jpg"></a>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</form>
+<center>
+</center>
+</td>
+</tr>
+</table>
+</body>
+</html>
+

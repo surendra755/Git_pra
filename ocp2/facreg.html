@@ -1,0 +1,314 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function check_submit()
+		{	
+			var userid=document.getElementById("userid");
+			var password=document.getElementById("password");
+			var repassword=document.getElementById("repassword");
+			var secans=document.getElementById("secans");
+			var ffname=document.getElementById("ffname");
+			var flname=document.getElementById("flname");
+			var year=document.getElementById("year");
+			var street=document.getElementById("street");
+			var city=document.getElementById("city");
+			var state=document.getElementById("state");
+			var country=document.getElementById("country");
+			var zipcode=document.getElementById("zipcode");
+			var email_id=document.getElementById("email_id");
+			var phoneno=document.getElementById("phoneno");
+			var courseid=document.getElementById("courseid");
+			if(userid.value=="")
+			{
+				alert("Enter UserId");
+				userid.focus();
+				return false;
+			}
+			if(password.value.length<6)
+			{
+				alert("password must be atleast 6 characters");
+				password.focus();
+				password.value="";
+				return false;
+			}
+			if(repassword.value!=password.value)
+			{
+				alert("passwords do not match");
+				repassword.focus();
+				repassword.value="";
+				return false;
+			}
+			if(secans.value=="")
+			{
+				alert("Enter secret answer");
+				secans.focus();
+				return false;
+			}
+			if(ffname.value=="")
+			{
+				alert("Enter first name");
+				ffname.focus();
+				return false;
+			}
+			if(flname.value=="")
+			{
+				alert("Enter last name");
+				flname.focus();
+				return false;
+			}
+			if(year.value=="")
+			{
+				alert("Enter year of birth");
+				year.focus();
+				return false;
+			}
+			if(street.value=="")
+			{
+				alert("Enter the street");
+				street.focus();
+				return false;
+			}
+			if(city.value=="")
+			{
+				alert("Enter the city");
+				city.focus();
+				return false;
+			}
+			if(state.value=="")
+			{
+				alert("Enter the state");
+				state.focus();
+				return false;
+			}
+			if(country.value=="")
+			{
+				alert("Enter the country");
+				country.focus();
+				return false;
+			}
+			if(zipcode.value=="")
+			{
+				alert("Enter the zipcode");
+				zipcode.focus();
+				return false;
+			}
+			if(email_id.value=="")
+			{
+				alert("Enter the emailid");
+				email_id.focus();
+				return false;
+			}
+			if(email_id.value!="")
+			{	var posi=email_id.value;
+				apos=posi.indexOf("@")
+				dotpos=posi.lastIndexOf(".")
+				if (apos<1||dotpos-apos<2) 
+				{
+					alert("not A Valid EMAIL Address");
+					email_id.focus();
+					return false;
+				}
+			}
+			if(phoneno.value=="")
+			{
+				alert("Enter the phoneno");
+				phoneno.focus();
+				return false;
+			}
+			if(courseid.value=="")
+			{
+				alert("Enter the courseid");
+				courseid.focus();
+				return false;
+			}
+		}
+		function checknumeric()
+		{
+			if(window.event.keyCode<47)
+			{
+				window.event.keyCode=0;
+				alert("characters not allowed");
+			}
+			if(window.event.keyCode>58)
+			{
+				window.event.keyCode=0;
+				alert("characters not allowed");
+			}
+		}
+	</script>
+
+</head>
+<body bgcolor="eeffee">
+	<table width="978" height="502" border="0">
+		<tr>
+		<td align="right"><a href="home.html"><img src="home.jpg"></a></td>
+		</tr>
+  		<tr>
+    			<td height="91"><pre><h1>            FACULTY REGISTRATION FORM<img src="reg1.jpg"></h1></pre><hr></td>
+		</tr>
+  		<tr>
+			<td>
+				<center>
+						<form name="facreg" onsubmit="return check_submit()" action="./facreg" method="post">
+							<table width="500" height="30" border="0" >
+								<tr bgcolor="#CC99CC">
+                    							<td colspan=2><center>LOGIN INFO</center></td>
+                  						</tr>
+								<tr>
+                    							<td><center>USERID</center></td>
+								<td><input id="userid" name="userid" type="text" size="50" maxlength="100" value=""></td>
+                  							</tr>
+								<tr>
+                    				<td><center>PassWord</center></td>
+									<td><input id="password" name="password" type="password" size="50" maxlength="100" value=""></td>
+                  				</tr>
+								<tr>
+                    				<td><center>Re-PassWord</center></td>
+									<td><input id="repassword" name="repassword" type="password" size="50" maxlength="100" value=""></td>
+								</tr>
+								<tr>
+									<td><center>Secret Question</center></td>
+									<td><select name="secque" ID="secque">
+										<option value="select" selected="selected">Your question</option> 
+										<option value="what is ur petname">what is ur petname</option>
+										<option value="who is ur fav film star">who is ur fav film star</option>
+										<option value="what is ur school name">what is ur school name</option> 
+										<option value="what is ur pets name">what is ur pets name</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+                    				<td><center>Your Answer</center></td>
+									<td><input id="secans" name="secans" type="text" size="50" maxlength="100" value=""></td>
+                  				</tr>
+								<tr bgcolor="#CC99CC">
+                    							<td colspan=2><center>PERSONAL INFO</center></td>
+                  						</tr>
+								<tr>
+                    							<td><center>FirstName</center></td>
+									<td><input id="ffname" name="ffname" type="text" size="50" maxlength="100" value=""></td>
+                  						</tr>
+								<tr>
+                    							<td><center>LastName</center></td>
+									<td><input id="flname" name="flname" type="text" size="50" maxlength="100" value=""></td>
+                  						</tr>
+								<tr>
+                    							<td><center>DateOFBirth</center></td>
+									<td><select name="day" size="">
+				    					<option value=1>1</option>
+				       					<option value=2>2</option>
+				      					<option value=3>3</option>
+				      					<option value=4>4</option>
+				   					<option value=5>5</option>
+				    					<option value=6>6</option>
+				    	       				<option value=7>7</option>
+				    	  				<option value=8>8</option>
+				     			        	<option value=9>9</option>
+				    				   	<option value=10>10</option>
+				    					<option value=11>11</option>
+				    					<option value=12>12</option>
+				    					<option value=13>13</option>
+				    					<option value=14>14</option>
+				 					<option value=15>15</option>
+				  					<option value=16>16</option>
+				    					<option value=17>17</option>
+				    					<option value=18>18</option>
+				    					<option value=19>19</option>
+				    					<option value=20>20</option>
+				    					<option value=21>21</option>
+				    					<option value=22>22</option>
+				    					<option value=23>23</option>
+				    					<option value=24>24</option>
+				    					<option value=25>25</option>
+				    					<option value=26>26</option>
+				    					<option value=27>27</option>
+				    					<option value=28>28</option>
+				    					<option value=29>29</option>
+				    					<option value=30>30</option>
+				    					<option value=31>31</option>
+			      						</select>&nbsp;&nbsp;&nbsp;&nbsp;
+				  					<select name="month" size="">
+				    					<option value="Jan">Jan</option>
+				    					<option value="Feb">Feb</option>
+				    					<option value="Mar">Mar</option>
+				    					<option value="Apr">Apr</option>
+				    					<option value="May">May</option>
+				    					<option value="Jun">Jun</option>
+				    					<option value="Jul">Jul</option>
+				    					<option value="Aug">Aug</option>
+				    					<option value="Sep">Sep</option>
+				    					<option value="Oct">Oct</option>
+				    					<option value="Nov">Nov</option>
+				    					<option value="Dec">Dec</option>
+			      						</select>&nbsp;&nbsp;&nbsp;&nbsp;
+				  					<input id="year" name="year" type="text" size="8" maxlength="4" value="" onkeypress=checknumeric()>(yyyy)
+									</td>
+                  						</tr>
+								<tr>
+                    							<td><center>Gender</center></td>
+									<td>
+										<select id="gender" name="gender" size="">
+                    								<option value="male">Male</option>
+                    								<option value="female">Female</option>
+                  								</select>
+									</td>
+                  						</tr>
+								<tr>
+                    							<td><center>Graduate</center></td>
+									<td><input id="grad" type="checkbox" name="graduate" value=""></td>
+                  						</tr>
+								<tr>
+                    							<td><center>PostGraduate</center></td>
+									<td><input id="postgrad" type="checkbox" name="postgrad" value=""></td>
+                  						</tr>
+								<tr bgcolor="#CC99CC">
+                    							<td colspan=2><center>ADDRESS</center></td>
+                  						</tr>
+								<tr>
+                    							<td><center>Street</center></td>
+									<td><input id="street" name="street" type="text" size="50" maxlength="100" value=""></td>
+                  						</tr>
+								<tr>
+                    							<td><center>City/Area</center></td>
+									<td><input id="city" name="city" type="text" size="50" maxlength="100" value=""></td>
+                  						</tr>
+								<tr>
+                    							<td><center>State</center></td>
+									<td><input id="state" name="state" type="text" size="50" maxlength="100" value=""></td>
+                  						</tr>
+								<tr>
+                    							<td><center>Country</center></td>
+									<td><input id="country" name="country" type="text" size="50" maxlength="100" value=""></td>
+                  						</tr>
+								<tr>
+                    							<td><center>ZipCode</center></td>
+									<td><input id="zipcode" name="zipcode" type="text" size="50" maxlength="100" value="" onkeypress="checknumeric()"></td>
+                  						</tr>
+								<tr>
+                    							<td><center>Email_id</center></td>
+									<td><input id="emai_id" name="email_id" type="text" size="50" maxlength="100" value=""></td>
+                  						</tr>
+								<tr>
+                    							<td><center>PhoneNo</center></td>
+									<td><input id="phoneno" name="phoneno" type="text" size="50" maxlength="100" value="" onkeypress="checknumeric()"></td>
+                  						</tr>
+								<tr bgcolor="#CC99CC">
+						                  		<td colspan=2><center>COURSE DETAILS</center></td>
+						                </tr>
+								<tr>
+									<td><center>Courseid</center></td>
+									<td><input id="courseid" name="courseid" type="text" size="50" maxlength="100" value=""></td>
+								</tr>
+								<tr>
+				          				<td colspan=2><center><input name="submit" type="submit" value="SUBMIT">
+									<input name="reset" type="reset" value="RESET">
+									</td>
+								</tr>
+							</table>
+		  				</form>
+      					</center>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

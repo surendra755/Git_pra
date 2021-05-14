@@ -1,0 +1,2 @@
+create table afac(announcements varchar2(100) Not Null)
+/
